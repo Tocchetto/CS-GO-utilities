@@ -1,8 +1,16 @@
 HotKeySet("+a", "start")
+HotKeySet("+b", "startt")
 
 HotKeySet("{ESC}", "terminate")
 
 Func terminate()
+   Exit 1
+EndFunc
+
+Func startt()
+   Sleep(1000)
+   Send("ent_fire {!}self addoutput " & '"health 1337"' & @CRLF)
+   Sleep(1000)
    Exit 1
 EndFunc
 
@@ -27,10 +35,13 @@ Func start()
    Send("mp_restartgame 1" & @CRLF)
 
 
+
    Send("bind "& '"f"' & " noclip" & @CRLF)
    Send("alias " & '"+jumpthrow" ' & '"+jump;-attack"' & @CRLF)
    Send("alias " & '"-jumpthrow" ' & '"-jump"' & @CRLF)
    Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
+   Sleep(1500)
+   Send("ent_fire {!}self addoutput " & '"health 1337"' & @CRLF)
    Sleep(1000)
    Exit 1
 EndFunc
