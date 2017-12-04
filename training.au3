@@ -27,7 +27,7 @@ Func start()
    Send("mp_restartgame 1" & @CRLF)
 
 
-   Send("bind "& '"f"' & " noclip")
+   Send("bind "& '"f"' & " noclip" & @CRLF)
    Send("alias " & '"+jumpthrow"' & '"+jump;-attack"' & @CRLF)
    Send("alias " & '"-jumpthrow"' & '"-jump"' & @CRLF)
    Send("bind " & '"h"' & '"+jumpthrow"' & @CRLF)
