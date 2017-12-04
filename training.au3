@@ -16,7 +16,7 @@ Func start()
    Send("mp_roundtime 60" & @CRLF)
    Send("mp_roundtime_defuse 60" & @CRLF)
    Send("sv_grenade_trajectory 1" & @CRLF)
-   Send("sv_grenade_trajectory_time 10" & @CRLF)
+   Send("sv_grenade_trajectory_time 20" & @CRLF)
    Send("sv_showimpacts 1" & @CRLF)
    Send("mp_limitteams 0" & @CRLF)
    Send("mp_autoteambalance 0" & @CRLF)
@@ -28,9 +28,9 @@ Func start()
 
 
    Send("bind "& '"f"' & " noclip" & @CRLF)
-   Send("alias " & '"+jumpthrow"' & '"+jump;-attack"' & @CRLF)
-   Send("alias " & '"-jumpthrow"' & '"-jump"' & @CRLF)
-   Send("bind " & '"h"' & '"+jumpthrow"' & @CRLF)
+   Send("alias " & '"+jumpthrow" ' & '"+jump;-attack"' & @CRLF)
+   Send("alias " & '"-jumpthrow" ' & '"-jump"' & @CRLF)
+   Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
    Sleep(1000)
    Exit 1
 EndFunc
