@@ -1,5 +1,8 @@
-HotKeySet("+a", "start")
-HotKeySet("+b", "startt")
+HotKeySet("+a", "trainingConfig")
+HotKeySet("+n", "noClip")
+HotKeySet("+h", "health")
+HotKeySet("+j", "jumpThrow")
+
 
 HotKeySet("{ESC}", "terminate")
 
@@ -7,14 +10,32 @@ Func terminate()
    Exit 1
 EndFunc
 
-Func startt()
+Func noClip()
+   Sleep(1000)
+   Send("bind "& '"f"' & " noclip" & @CRLF)
+   Sleep(1000)
+   Exit 1
+EndFunc
+
+Func health()
    Sleep(1000)
    Send("ent_fire {!}self addoutput " & '"health 1337"' & @CRLF)
    Sleep(1000)
    Exit 1
 EndFunc
 
-Func start()
+Func jumpThrow()
+   Sleep(1000)
+   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump;{-}attack"' & @CRLF)
+   Send("alias " & '"{-}jumpthrow" ' & '"{-}jump"' & @CRLF)
+   Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
+   Send("cl_radar_scale " & '"0.500000"' & @CRLF)
+   Send("cl_hud_playercount_showcount " & '"1"' & @CRLF)
+   ;Send("cl_hud_playercount_pos " & '"1"' & @CRLF)
+   Exit 1
+EndFunc
+
+Func trainingConfig()
    Sleep(1000)
    Send("sv_cheats 1" & @CRLF)
    Send("sv_infinite_ammo 1" & @CRLF)
@@ -34,11 +55,9 @@ Func start()
    Send("mp_buy_anywhere 1" & @CRLF)
    Send("mp_restartgame 1" & @CRLF)
 
-
-
    Send("bind "& '"f"' & " noclip" & @CRLF)
-   Send("alias " & '"+jumpthrow" ' & '"+jump;-attack"' & @CRLF)
-   Send("alias " & '"-jumpthrow" ' & '"-jump"' & @CRLF)
+   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump;-attack"' & @CRLF)
+   Send("alias " & '"{-}jumpthrow" ' & '"{-}jump"' & @CRLF)
    Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
    Sleep(1500)
    Send("ent_fire {!}self addoutput " & '"health 1337"' & @CRLF)
