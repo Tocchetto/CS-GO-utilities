@@ -46,7 +46,7 @@ EndFunc
 
 Func jumpThrow()
    Sleep(1000)
-   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump;{-}attack"' & @CRLF)
+   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump; {-}attack; {-}attack2"' & @CRLF)
    Send("alias " & '"{-}jumpthrow" ' & '"{-}jump"' & @CRLF)
    Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
    Send("cl_radar_scale " & '"0.400000"' & @CRLF)
@@ -76,7 +76,7 @@ Func trainingConfig()
    Send("mp_restartgame 1" & @CRLF)
 
    Send("bind "& '"f"' & " noclip" & @CRLF)
-   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump;-attack"' & @CRLF)
+   Send("alias " & '"{+}jumpthrow" ' & '"{+}jump; {-}attack; {-}attack2"' & @CRLF)
    Send("alias " & '"{-}jumpthrow" ' & '"{-}jump"' & @CRLF)
    Send("bind " & '"h" ' & '"{+}jumpthrow"' & @CRLF)
    Sleep(1500)
